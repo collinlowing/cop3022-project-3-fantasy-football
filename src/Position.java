@@ -1,0 +1,7 @@
+
+public enum Position 
+{
+	QUARTERBACK,
+	RUNNINGBACK,
+	DEFENSIVEBACK
+}
