@@ -7,37 +7,39 @@ public class DefensiveBack extends FootballPlayer
 	
 	public DefensiveBack()
 	{
-		
+		this(0, 0, 0);
 	}
 	
 	public DefensiveBack(int numTackles, int numIntercepts, int numForcedFumbles)
 	{
-		
+		this.numTackles = numTackles;
+		this.numIntercepts = numIntercepts;
+		this.numForcedFumbles = numForcedFumbles;
 	}
 	
-	public double averageTablesPerGame()
+	public double averageTacklesPerGame()
 	{
-		return 0.0;
+		return super.getNumGamesPlayed() / this.numTackles;
 	}
 	
 	public double averageInterceptionsPerGame()
 	{
-		return 0.0;
+		return super.getNumGamesPlayed() / this.numIntercepts;
 	}
 	
 	public double averageForcedFumblesPerGame()
 	{
-		return 0.0;
+		return super.getNumGamesPlayed() / this.numForcedFumbles;
 	}
 	
 	@Override
 	public int playerRating()
 	{
-		return 0;
+		return (int) ((averageTacklesPerGame() + averageInterceptionsPerGame() + (averageForcedFumblesPerGame()/5)) * 10);
 	}
 	
 	public String toString()
 	{
-		return "";
+		return this.numTackles + " " + this.numIntercepts + " " + this.numForcedFumbles + " " + playerRating();
 	}
 }
