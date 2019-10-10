@@ -7,33 +7,35 @@ public class RunningBack extends FootballPlayer
 	
 	public RunningBack()
 	{
-		
+		this(0, 0, 0);
 	}
 	
 	public RunningBack(int runningAttempts, int totalRunningYards, int touchdowns)
 	{
-		
+		this.runningAttempts = runningAttempts;
+		this.totalRunningYards = totalRunningYards;
+		this.touchdowns = touchdowns;
 	}
 	
 	public double averageYardsPerGame()
 	{
-		return 0.0;
+		return super.getNumGamesPlayed() / this.totalRunningYards;
 	}
 	
 	public double averageYardsPerAttempt()
 	{
-		return 0.0;
+		return this.totalRunningYards / this.runningAttempts;
 	}
 	
 	public double averageTouchdownsPerGame()
 	{
-		return 0.0;
+		return super.getNumGamesPlayed() / this.touchdowns;
 	}
 	
 	@Override
 	public int playerRating()
 	{
-		return 0;
+		return (int) (averageTouchdownsPerGame() + averageYardsPerAttempt()+ (averageYardsPerGame() / 5));
 	}
 	
 	public String toString()

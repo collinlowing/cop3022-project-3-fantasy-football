@@ -8,27 +8,30 @@ public class QuarterBack extends FootballPlayer
 	
 	public QuarterBack()
 	{
-		
+		this(0, 0, 0, 0);
 	}
 	
 	public QuarterBack(int passAttempts, int passCompletes, int touchdownPasses, int totalYardsPassed)
 	{
-		
+		this.passAttempts = passAttempts;
+		this.passCompletes = passCompletes;
+		this.touchdownPasses = touchdownPasses;
+		this.totalYardsPassed = totalYardsPassed;
 	}
 	
 	public double completionPercentage()
 	{
-		return 0.0;
+		return this.passCompletes / this.passAttempts;
 	}
 	
 	public double averagePassingYardsPerGame()
 	{
-		return 0.0;
+		return super.getNumGamesPlayed() / this.totalYardsPassed;
 	}
 	
 	public double averageTouchdownsPerGame()
 	{
-		return 0.0;
+		return super.getNumGamesPlayed() / this.touchdownPasses;
 	}
 	
 	@Override
@@ -36,13 +39,13 @@ public class QuarterBack extends FootballPlayer
 	{
 		int rating = 0;
 		
-		//equation
+		rating = (int) (averageTouchdownsPerGame() + (completionPercentage() * 100) + (averagePassingYardsPerGame() / 5));
 		
 		return rating;
 	}
 	
 	public String toString()
 	{
-		return "";
+		return super.toString() + "Completion Percentage: " + completionPercentage() + ", Average Passing Yards Per Game: " + averagePassingYardsPerGame() + "\nAverage Touch Downs Per Game: " + averageTouchdownsPerGame() + ", Player's Rating: " + playerRating();
 	}
 }

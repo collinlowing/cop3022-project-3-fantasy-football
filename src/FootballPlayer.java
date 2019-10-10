@@ -40,6 +40,15 @@ public abstract class FootballPlayer
 	
 	public String toString()
 	{
-		return "";
+		if(position == Position.BENCH)
+			return "Name: " + this.playerName + ", Position: Benched, NFL Team: " + this.NFL_Team;
+		if(position == Position.QUARTERBACK)
+			return "Name: " + this.playerName + ", Position: Quarter Back, NFL Team: " + this.NFL_Team;
+		if(position == Position.DEFENSIVEBACK)
+			return "Name: " + this.playerName + ", Position: Defensive Back, NFL Team: " + this.NFL_Team;
+		if(position == Position.RUNNINGBACK)
+			return "Name: " + this.playerName + ", Position: Running Back, NFL Team: " + this.NFL_Team;
+		else
+			return "";
 	}
 }
