@@ -2,12 +2,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class FantasyFootballTester 
-{
+class QuarterBackTest {
 
 	@Test
-	void test() 
-	{
+	void test() {
 		fail("Not yet implemented");
 	}
 

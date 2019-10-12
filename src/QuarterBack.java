@@ -46,6 +46,8 @@ public class QuarterBack extends FootballPlayer
 	
 	public String toString()
 	{
-		return super.toString() + "Completion Percentage: " + completionPercentage() + ", Average Passing Yards Per Game: " + averagePassingYardsPerGame() + "\nAverage Touch Downs Per Game: " + averageTouchdownsPerGame() + ", Player's Rating: " + playerRating();
+		return super.toString() 
+				+ "Completion Percentage: " + completionPercentage() + ", Average Passing Yards Per Game: " + averagePassingYardsPerGame() + "\n"
+				+ "Average Touch Downs Per Game: " + averageTouchdownsPerGame() + ", Player's Rating: " + playerRating();
 	}
 }

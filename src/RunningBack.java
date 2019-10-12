@@ -19,7 +19,7 @@ public class RunningBack extends FootballPlayer
 	
 	public double averageYardsPerGame()
 	{
-		return super.getNumGamesPlayed() / this.totalRunningYards;
+		return this.totalRunningYards / super.getNumGamesPlayed();
 	}
 	
 	public double averageYardsPerAttempt()
@@ -29,7 +29,7 @@ public class RunningBack extends FootballPlayer
 	
 	public double averageTouchdownsPerGame()
 	{
-		return super.getNumGamesPlayed() / this.touchdowns;
+		return this.touchdowns / super.getNumGamesPlayed();
 	}
 	
 	@Override
@@ -40,6 +40,7 @@ public class RunningBack extends FootballPlayer
 	
 	public String toString()
 	{
-		return "";
+		return super.toString()
+				+ "Average Running Yards Per Game: " + this.averageYardsPerGame() + ", Average Yards Per Running Attempt: " + this.averageYardsPerAttempt() + ", Average Touchdowns Per Game: " + this.averageTouchdownsPerGame();
 	}
 }
