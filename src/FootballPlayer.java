@@ -33,6 +33,20 @@ public abstract class FootballPlayer
 		return this.numGamesPlayed;
 	}
 	
+	public String getPosition()
+	{
+		if(this.position == Position.BENCH)
+			return "Benched";
+		if(this.position == Position.QUARTERBACK)
+			return "Quarter Back";
+		if(this.position == Position.DEFENSIVEBACK)
+			return "Defensive Back";
+		if(this.position == Position.RUNNINGBACK)
+			return "Running Back";
+		else
+			return "";
+	}
+	
 	public int compareTo(int compareRating)
 	{
 		if(playerRating() == compareRating)
@@ -45,15 +59,6 @@ public abstract class FootballPlayer
 	
 	public String toString()
 	{
-		if(position == Position.BENCH)
-			return "Name: " + this.playerName + ", Position: Benched, NFL Team: " + this.NFL_Team + "\n";
-		if(position == Position.QUARTERBACK)
-			return "Name: " + this.playerName + ", Position: Quarter Back, NFL Team: " + this.NFL_Team + "\n";
-		if(position == Position.DEFENSIVEBACK)
-			return "Name: " + this.playerName + ", Position: Defensive Back, NFL Team: " + this.NFL_Team + "\n";
-		if(position == Position.RUNNINGBACK)
-			return "Name: " + this.playerName + ", Position: Running Back, NFL Team: " + this.NFL_Team + "\n";
-		else
-			return "";
+		return "Name: " + this.playerName + ", Position: " + this.getPosition() + ", NFL Team: " + this.NFL_Team + "\n";
 	}
 }
