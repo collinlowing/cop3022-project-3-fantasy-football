@@ -7,11 +7,13 @@ public class DefensiveBack extends FootballPlayer
 	
 	public DefensiveBack()
 	{
-		this(0, 0, 0);
+		this("Bobby Billy-Bob", Position.BENCH, "Washington Gun-Takers", 0, 0, 0, 0);
 	}
 	
-	public DefensiveBack(int numTackles, int numIntercepts, int numForcedFumbles)
+	public DefensiveBack(String name, Position position, String team, int numGames, int numTackles, int numIntercepts, int numForcedFumbles)
 	{
+		super(name, position, team, numGames);
+		
 		this.numTackles = numTackles;
 		this.numIntercepts = numIntercepts;
 		this.numForcedFumbles = numForcedFumbles;
@@ -19,17 +21,26 @@ public class DefensiveBack extends FootballPlayer
 	
 	public double averageTacklesPerGame()
 	{
-		return this.numTackles / super.getNumGamesPlayed();
+		if(super.getNumGamesPlayed() <= 0)
+			return 0;
+		else
+			return this.numTackles / super.getNumGamesPlayed();
 	}
 	
 	public double averageInterceptionsPerGame()
 	{
-		return this.numIntercepts / super.getNumGamesPlayed();
+		if(super.getNumGamesPlayed() <= 0)
+			return 0;
+		else
+			return this.numIntercepts / super.getNumGamesPlayed();
 	}
 	
 	public double averageForcedFumblesPerGame()
 	{
-		return this.numForcedFumbles / super.getNumGamesPlayed();
+		if(super.getNumGamesPlayed() <= 0)
+			return 0;
+		else
+			return this.numForcedFumbles / super.getNumGamesPlayed();
 	}
 	
 	@Override
@@ -41,7 +52,7 @@ public class DefensiveBack extends FootballPlayer
 	public String toString()
 	{
 		return super.toString()
-				+ "Average Tacles Per Game: " + this.averageInterceptionsPerGame() + ", Average Intercepts Per Game: " + this.averageInterceptionsPerGame() + ", Average Forced Fumbles Per Game: " + this.averageForcedFumblesPerGame() + "\n" 
+				+ "Average Tackles Per Game: " + this.averageTacklesPerGame() + ", Average Intercepts Per Game: " + this.averageInterceptionsPerGame() + ", Average Forced Fumbles Per Game: " + this.averageForcedFumblesPerGame() + "\n" 
 				+ "Player's Rating: " + this.playerRating();
 	}
 }

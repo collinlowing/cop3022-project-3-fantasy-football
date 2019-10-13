@@ -21,17 +21,26 @@ public class QuarterBack extends FootballPlayer
 	
 	public double completionPercentage()
 	{
-		return this.passCompletes / this.passAttempts;
+		if(this.passAttempts <= 0)
+			return 0;
+		else
+			return this.passCompletes / this.passAttempts;
 	}
 	
 	public double averagePassingYardsPerGame()
 	{
-		return super.getNumGamesPlayed() / this.totalYardsPassed;
+		if(super.getNumGamesPlayed() <= 0)
+			return 0;
+		else
+			return this.totalYardsPassed / super.getNumGamesPlayed();
 	}
 	
 	public double averageTouchdownsPerGame()
 	{
-		return super.getNumGamesPlayed() / this.touchdownPasses;
+		if(super.getNumGamesPlayed() <= 0)
+			return 0;
+		else
+			return this.touchdownPasses / super.getNumGamesPlayed();
 	}
 	
 	@Override

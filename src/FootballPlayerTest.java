@@ -8,7 +8,7 @@ class FootballPlayerTest
 	@Test
 	void test() 
 	{
-		FootballPlayer benchedPlayer = new FootballPlayer();
+		FootballPlayer benchedPlayer = new QuarterBack();
 		assertEquals("Name: Bobby Billy-Bob, Position: Benched, NFL Team: Washington Gun-Takers", benchedPlayer.toString());
 	}
 
