@@ -1,19 +1,24 @@
 
+// Sub Class
 public class RunningBack extends FootballPlayer
 {
 	private int runningAttempts;
 	private int totalRunningYards;
 	private int touchdowns;
+	private int numGames;
 	
+	// Default constructor
 	public RunningBack()
 	{
 		this("Bobby Billy-Bob", Position.BENCH, "Washington Gun-Takers", 0, 0, 0, 0);
 	}
 	
+	// Parameterized constructor
 	public RunningBack(String name, Position position, String team, int numGames, int runningAttempts, int totalRunningYards, int touchdowns)
 	{
 		super(name, position, team, numGames);
 		
+		this.numGames = numGames;
 		this.runningAttempts = runningAttempts;
 		this.totalRunningYards = totalRunningYards;
 		this.touchdowns = touchdowns;
@@ -21,15 +26,15 @@ public class RunningBack extends FootballPlayer
 	
 	public double averageYardsPerGame()
 	{
-		if(super.getNumGamesPlayed() <= 0)
+		if(this.numGames <= 0)										// Safeguards against dividing by 0 error
 			return 0;
 		else
-			return this.totalRunningYards / super.getNumGamesPlayed();
+			return this.totalRunningYards / this.numGames;
 	}
 	
 	public double averageYardsPerAttempt()
 	{
-		if(super.getNumGamesPlayed() <= 0)
+		if(this.numGames <= 0)										// Safeguards against dividing by 0 error
 			return 0;
 		else
 			return this.totalRunningYards / this.runningAttempts;
@@ -37,10 +42,10 @@ public class RunningBack extends FootballPlayer
 	
 	public double averageTouchdownsPerGame()
 	{
-		if(super.getNumGamesPlayed() <= 0)
+		if(this.numGames <= 0)										// Safeguards against dividing by 0 error
 			return 0;
 		else
-			return this.touchdowns / super.getNumGamesPlayed();
+			return this.touchdowns / this.numGames;
 	}
 	
 	@Override

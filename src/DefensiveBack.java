@@ -1,19 +1,24 @@
 
+// Sub Class
 public class DefensiveBack extends FootballPlayer
 {
 	private int numTackles;
 	private int numIntercepts;
 	private int numForcedFumbles;
+	private int numGames;
 	
+	// Default constructor
 	public DefensiveBack()
 	{
 		this("Bobby Billy-Bob", Position.BENCH, "Washington Gun-Takers", 0, 0, 0, 0);
 	}
 	
+	// Parameterized constructor
 	public DefensiveBack(String name, Position position, String team, int numGames, int numTackles, int numIntercepts, int numForcedFumbles)
 	{
 		super(name, position, team, numGames);
 		
+		this.numGames = numGames;
 		this.numTackles = numTackles;
 		this.numIntercepts = numIntercepts;
 		this.numForcedFumbles = numForcedFumbles;
@@ -21,26 +26,26 @@ public class DefensiveBack extends FootballPlayer
 	
 	public double averageTacklesPerGame()
 	{
-		if(super.getNumGamesPlayed() <= 0)
+		if(this.numGames <= 0)								// Safeguards against dividing by 0 error
 			return 0;
 		else
-			return this.numTackles / super.getNumGamesPlayed();
+			return this.numTackles / this.numGames;
 	}
 	
 	public double averageInterceptionsPerGame()
 	{
-		if(super.getNumGamesPlayed() <= 0)
+		if(this.numGames <= 0)								// Safeguards against dividing by 0 error
 			return 0;
 		else
-			return this.numIntercepts / super.getNumGamesPlayed();
+			return this.numIntercepts / this.numGames;
 	}
 	
 	public double averageForcedFumblesPerGame()
 	{
-		if(super.getNumGamesPlayed() <= 0)
+		if(this.numGames <= 0)								// Safeguards against dividing by 0 error
 			return 0;
 		else
-			return this.numForcedFumbles / super.getNumGamesPlayed();
+			return this.numForcedFumbles / this.numGames;
 	}
 	
 	@Override

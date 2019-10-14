@@ -1,4 +1,5 @@
 
+// Super Class
 public abstract class FootballPlayer 
 {
 	private String playerName;
@@ -21,13 +22,16 @@ public abstract class FootballPlayer
 		this.numGamesPlayed = numGames;
 	}
 	
+	// Abstract playerRating method because it can never be instantiated in FootballPlayer but only subclasses.
 	public abstract int playerRating();
 	
+	// Getter method for subclass
 	public int getNumGamesPlayed()
 	{
 		return this.numGamesPlayed;
 	}
 	
+	// Returns a string version of the Position value
 	public String getPosition()
 	{
 		if(this.position == Position.BENCH)
@@ -42,6 +46,7 @@ public abstract class FootballPlayer
 			return "";
 	}
 	
+	// Compares the rating value for two players
 	public int compareTo(int compareRating)
 	{
 		if(playerRating() == compareRating)
