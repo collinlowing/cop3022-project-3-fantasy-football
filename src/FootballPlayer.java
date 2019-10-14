@@ -21,12 +21,7 @@ public abstract class FootballPlayer
 		this.numGamesPlayed = numGames;
 	}
 	
-	public int playerRating()
-	{
-		int rating = 0;
-		
-		return rating;
-	}
+	public abstract int playerRating();
 	
 	public int getNumGamesPlayed()
 	{
@@ -55,6 +50,8 @@ public abstract class FootballPlayer
 			return 1;
 		if(playerRating() < compareRating)
 			return -1;
+		else									// Throws unresolved compilation problem when this is not present
+			return 0; 
 	}
 	
 	public String toString()

@@ -18,13 +18,13 @@ public class FantasyFootballTeam
 	
 	public void addPlayer(FootballPlayer player)
 	{
-		if(filledSize > arraySize)
+		if(filledSize > arraySize-1)
 		{
 			System.err.print("ERROR: There is no more room on the team.");
 		}
 		else
 		{
-			playerTeam[filledSize + 1] = player;
+			playerTeam[filledSize] = player;
 			filledSize++;
 		}
 	}
@@ -46,7 +46,7 @@ public class FantasyFootballTeam
 	public String toString()
 	{
 		String string = "";
-		string = "Team Name: " + this.teamName + "Owner: " + this.teamOwner + "\n\n";
+		string = "Team Name: " + this.teamName + " Owner: " + this.teamOwner + "\n\n";
 		
 		for(int i = 0; i < filledSize; i++)
 		{

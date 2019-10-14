@@ -8,11 +8,13 @@ public class QuarterBack extends FootballPlayer
 	
 	public QuarterBack()
 	{
-		this(0, 0, 0, 0);
+		this("Bobby Billy-Bob", Position.BENCH, "Washington Gun-Takers", 0, 0, 0, 0, 0);
 	}
 	
-	public QuarterBack(int passAttempts, int passCompletes, int touchdownPasses, int totalYardsPassed)
+	public QuarterBack(String name, Position position, String team, int numGames, int passAttempts, int passCompletes, int touchdownPasses, int totalYardsPassed)
 	{
+		super(name, position, team, numGames);
+		
 		this.passAttempts = passAttempts;
 		this.passCompletes = passCompletes;
 		this.touchdownPasses = touchdownPasses;

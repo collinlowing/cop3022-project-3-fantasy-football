@@ -7,11 +7,13 @@ public class RunningBack extends FootballPlayer
 	
 	public RunningBack()
 	{
-		this(0, 0, 0);
+		this("Bobby Billy-Bob", Position.BENCH, "Washington Gun-Takers", 0, 0, 0, 0);
 	}
 	
-	public RunningBack(int runningAttempts, int totalRunningYards, int touchdowns)
+	public RunningBack(String name, Position position, String team, int numGames, int runningAttempts, int totalRunningYards, int touchdowns)
 	{
+		super(name, position, team, numGames);
+		
 		this.runningAttempts = runningAttempts;
 		this.totalRunningYards = totalRunningYards;
 		this.touchdowns = touchdowns;
@@ -50,6 +52,7 @@ public class RunningBack extends FootballPlayer
 	public String toString()
 	{
 		return super.toString()
-				+ "Average Running Yards Per Game: " + this.averageYardsPerGame() + ", Average Yards Per Running Attempt: " + this.averageYardsPerAttempt() + ", Average Touchdowns Per Game: " + this.averageTouchdownsPerGame();
+				+ "Average Running Yards Per Game: " + this.averageYardsPerGame() + ", Average Yards Per Running Attempt: " + this.averageYardsPerAttempt() + ", Average Touchdowns Per Game: " + this.averageTouchdownsPerGame() + "\n"
+				+ "Player's Rating: " + this.playerRating();
 	}
 }
